@@ -3,9 +3,8 @@ package edu.umn.pathology.pathcalc;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.View;
+import android.widget.EditText;
 
-import static java.lang.Float.parseFloat;
 
 public class PathCalc extends Activity {
 
@@ -23,9 +22,14 @@ public class PathCalc extends Activity {
         return true;
     }
 
-    public void calcGleason(View view) {
-        float GS3 = parseFloat();
-        float GS4 = parseFloat();
-        float qGS = 2 * ();
+    public void calcGleason() {
+        EditText editText1 = (EditText) findViewById(R.id.editText);
+        float GS3 = 3 * Float.parseFloat(editText1.getText().toString());
+        EditText editText2 = (EditText) findViewById(R.id.editText2);
+        float GS4 = 4 * Float.parseFloat(editText2.getText().toString());
+        float qGS;
+        qGS = (2 * (GS3 + GS4));
+        EditText editText3 = (EditText) findViewById(R.id.editText3);
+        editText3.setText(String.valueOf(qGS));
     }
 }
