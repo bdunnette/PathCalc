@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" >PathCalc
+    </string>
+    <string name="action_settings" >Settings
+    </string>
+    <string name="Field1Label">GS3:</string><string name="Field2Label">GS4:</string><string name="ResultLabel">qGS:</string><string name="ButtonText">Calculate</string>
+
+</resources>
