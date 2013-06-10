@@ -3,7 +3,10 @@ package edu.umn.pathology.pathcalc;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
 import android.widget.EditText;
+
+import static java.lang.String.valueOf;
 
 
 public class PathCalc extends Activity {
@@ -22,14 +25,21 @@ public class PathCalc extends Activity {
         return true;
     }
 
-    public void calcGleason() {
-        EditText editText1 = (EditText) findViewById(R.id.editText);
-        float GS3 = 3 * Float.parseFloat(editText1.getText().toString());
-        EditText editText2 = (EditText) findViewById(R.id.editText2);
-        float GS4 = 4 * Float.parseFloat(editText2.getText().toString());
-        float qGS;
-        qGS = (2 * (GS3 + GS4));
-        EditText editText3 = (EditText) findViewById(R.id.editText3);
-        editText3.setText(String.valueOf(qGS));
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button:
+                EditText inputText1 = (EditText) findViewById(R.id.inputText1);
+                float GS3 = Float.parseFloat(inputText1.getText().toString());
+                EditText inputText2 = (EditText) findViewById(R.id.inputText2);
+                float GS4 = Float.parseFloat(inputText2.getText().toString());
+                EditText resultText = (EditText) findViewById(R.id.resultText);
+                resultText.setText(valueOf(quantitativeGleasonScore(GS3, GS4)));
+        }
+
+    }
+
+    //Calculate a quantitative Gleason score
+    private float quantitativeGleasonScore(float GS3, float GS4) {
+        return 2 * ((3 * (GS3 / 100)) + (4 * (GS4 / 100)));
     }
 }

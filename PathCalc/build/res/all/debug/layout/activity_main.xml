@@ -9,8 +9,69 @@
     tools:context=".PathCalc">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Field1Label"
+            android:id="@+id/textView"
+            />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/inputText1"
+            android:layout_alignTop="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:editable="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/Field2Label"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/inputText1"
+            android:layout_alignLeft="@+id/textView"
+            />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/inputText2"
+            android:layout_below="@+id/inputText1"
+            android:layout_toRightOf="@+id/textView2"
+            android:editable="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/ResultLabel"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/inputText2"
+            android:layout_toLeftOf="@+id/inputText2"/>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/resultText"
+            android:layout_below="@+id/inputText2"
+            android:layout_toRightOf="@+id/textView3"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ButtonText"
+            android:id="@+id/button"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/resultText"
+            android:layout_alignLeft="@+id/resultText"
+            android:onClick="onClick"/>
 
 </RelativeLayout>
